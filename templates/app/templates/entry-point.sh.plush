@@ -1,0 +1,25 @@
+#!/bin/sh
+
+CHAINID=$1
+GENACCT=$2
+
+if [ -z "$1" ]; then
+  echo "Need to input chain id..."
+  exit 1
+fi
+
+if [ -z "$2" ]; then
+  echo "Need to input genesis account address..."
+  exit 1
+fi
+
+# Build genesis file incl account for passed address
+coins="1000000000000000<%=Denom%>,1000000000000000mdm"
+<%= BinaryNamePrefix %>d init --chain-id $CHAINID $CHAINID --stake-denom <%=Denom%>
+<%= BinaryNamePrefix %>cli keys add validator
+<%= BinaryNamePrefix %>d add-genesis-account validator $coins
+<%= BinaryNamePrefix %>d add-genesis-account $GENACCT $coins
+<%= BinaryNamePrefix %>d gentx --name validator --amount 100000000<%=Denom%>
+<%= BinaryNamePrefix %>d collect-gentxs
+
+#<%= BinaryNamePrefix %>d start --pruning=nothing

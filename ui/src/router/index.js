@@ -5,16 +5,16 @@ import Start from "@/views/Start.vue";
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: "/",
-    component: Start,
-  },
+    {
+        path: "/",
+        component: Start,
+    },
 ];
 
 const router = new VueRouter({
-  mode: "hash",
-  base: process.env.BASE_URL,
-  routes,
+    mode: "hash",
+    base: process.env.BASE_URL,
+    routes,
 });
 
 export default router;

@@ -4,9 +4,10 @@ import (
 	"context"
 	"fmt"
 	"os"
-
+	
 	"github.com/gobuffalo/genny"
 	"github.com/spf13/cobra"
+	
 	"github.com/tendermint/starport/pkg/gomodulepath"
 	"github.com/tendermint/starport/templates/app"
 )
@@ -21,11 +22,14 @@ var appCmd = &cobra.Command{
 			return err
 		}
 		denom, _ := cmd.Flags().GetString("denom")
+		account_prefix, _ := cmd.Flags().GetString("account_prefix")
+		
 		g, _ := app.New(&app.Options{
 			ModulePath:       path.RawPath,
 			AppName:          path.Package,
 			BinaryNamePrefix: path.Root,
 			Denom:            denom,
+			AccountPrefix:    account_prefix,
 		})
 		run := genny.WetRunner(context.Background())
 		run.With(g)

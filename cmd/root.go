@@ -7,10 +7,11 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-
+	
 	"github.com/Pallinder/go-randomdata"
 	"github.com/ilgooz/analytics-go"
 	"github.com/spf13/cobra"
+	
 	"github.com/tendermint/starport/pkg/analyticsutil"
 )
 
@@ -74,6 +75,7 @@ func init() {
 	rootCmd.AddCommand(addCmd)
 	serveCmd.Flags().BoolP("verbose", "v", false, "Verbose output")
 	appCmd.Flags().StringP("denom", "d", "token", "Token denomination")
+	appCmd.Flags().StringP("account_prefix", "a", "cosmos", "Account Prefix")
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
 
@@ -109,10 +111,10 @@ func prepLoginName() (name string, hadLogin bool) {
 type Metric struct {
 	// IsInstallation sets metrics type as an installation metric.
 	IsInstallation bool
-
+	
 	// Err sets metrics type as an error metric.
 	Err error
-
+	
 	// Login is the name of anon user.
 	Login string
 }

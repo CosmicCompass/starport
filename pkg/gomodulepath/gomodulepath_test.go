@@ -26,7 +26,7 @@ func TestParse(t *testing.T) {
 		},
 		{"invalid as go.mod module name",
 			"github.com/a/b/c@", Path{}, fmt.Errorf("app name is an invalid go module name: %w",
-				errors.New(`malformed module path "github.com/a/b/c@": invalid char '@'`)),
+			errors.New(`malformed module path "github.com/a/b/c@": invalid char '@'`)),
 		},
 	}
 	for _, tt := range cases {

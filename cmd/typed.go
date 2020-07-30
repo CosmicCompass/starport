@@ -4,9 +4,10 @@ import (
 	"context"
 	"fmt"
 	"strings"
-
+	
 	"github.com/gobuffalo/genny"
 	"github.com/spf13/cobra"
+	
 	"github.com/tendermint/starport/templates/typed"
 )
 

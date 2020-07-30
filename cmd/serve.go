@@ -10,7 +10,7 @@ import (
 	"os/signal"
 	"path/filepath"
 	"time"
-
+	
 	gocmd "github.com/go-cmd/cmd"
 	"github.com/gobuffalo/packr/v2"
 	"github.com/gorilla/mux"
@@ -81,7 +81,7 @@ func startServe(path string, verbose bool) (*exec.Cmd, *exec.Cmd) {
 	if verbose {
 		cmdInitPost.Stdout = os.Stdout
 	}
-	cmdTendermint := exec.Command(fmt.Sprintf("%[1]vd", appName), "start") //nolint:gosec // Subprocess launched with function call as argument or cmd arguments
+	cmdTendermint := exec.Command(fmt.Sprintf("%[1]vd", appName), "start") // nolint:gosec // Subprocess launched with function call as argument or cmd arguments
 	cmdTendermint.Dir = path
 	if verbose {
 		fmt.Printf("🌍 Running a server at http://localhost:26657 (Tendermint)\n")
@@ -92,7 +92,7 @@ func startServe(path string, verbose bool) (*exec.Cmd, *exec.Cmd) {
 	if err := cmdTendermint.Start(); err != nil {
 		log.Fatal(fmt.Sprintf("Error in running %[1]vd start", appName), err)
 	}
-	cmdREST := exec.Command(fmt.Sprintf("%[1]vcli", appName), "rest-server") //nolint:gosec // Subprocess launched with function call as argument or cmd arguments
+	cmdREST := exec.Command(fmt.Sprintf("%[1]vcli", appName), "rest-server") // nolint:gosec // Subprocess launched with function call as argument or cmd arguments
 	cmdREST.Dir = path
 	if verbose {
 		fmt.Printf("🌍 Running a server at http://localhost:1317 (LCD)\n")
