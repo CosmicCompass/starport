@@ -1,7 +1,7 @@
 brews:
   - name: "starport"
     description: "CLI tool for developing Cosmos SDK apps."
-    homepage: "https://github.com/tendermint/starport"
+    homepage: "https://github.com/CosmicCompass/starport"
     github:
       owner: "tendermint"
       name: "homebrew-tap"

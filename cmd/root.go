@@ -12,7 +12,7 @@ import (
 	"github.com/ilgooz/analytics-go"
 	"github.com/spf13/cobra"
 	
-	"github.com/tendermint/starport/pkg/analyticsutil"
+	"github.com/CosmicCompass/starport/pkg/analyticsutil"
 )
 
 const (

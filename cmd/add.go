@@ -6,7 +6,7 @@ import (
 	"github.com/gobuffalo/genny"
 	"github.com/spf13/cobra"
 	
-	"github.com/tendermint/starport/templates/add"
+	"github.com/CosmicCompass/starport/templates/add"
 )
 
 var addCmd = &cobra.Command{

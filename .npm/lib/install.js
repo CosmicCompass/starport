@@ -6,7 +6,7 @@ const ora = require("ora");
 const pkg = require("../package.json");
 const {starportDir, starportPath} = require("./conf");
 
-const baseUrl = "http://github.com/tendermint/starport/releases/download";
+const baseUrl = "http://github.com/CosmicCompass/starport/releases/download";
 const urls = {
     linux(version) {
         return `${baseUrl}/v${version}/starport_${version}_linux_amd64.tar.gz`;

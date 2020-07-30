@@ -18,7 +18,7 @@ brew install tendermint/tap/starport
 ### Build from source
 
 ```
-git clone https://github.com/tendermint/starport && cd starport && make
+git clone https://github.com/CosmicCompass/starport && cd starport && make
 ```
 
 Requirements: Go 1.14 and Node.js (optional, used to build the welcome screen).

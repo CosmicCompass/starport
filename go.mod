@@ -1,4 +1,4 @@
-module github.com/tendermint/starport
+module github.com/CosmicCompass/starport
 
 go 1.14
 
@@ -6,7 +6,6 @@ require (
 	github.com/Pallinder/go-randomdata v1.2.0
 	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 // indirect
 	github.com/go-cmd/cmd v1.2.0
-	github.com/gobuffalo/envy v1.9.0 // indirect
 	github.com/gobuffalo/genny v0.6.0
 	github.com/gobuffalo/packr/v2 v2.8.0
 	github.com/gobuffalo/plush v3.8.3+incompatible

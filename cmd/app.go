@@ -8,8 +8,8 @@ import (
 	"github.com/gobuffalo/genny"
 	"github.com/spf13/cobra"
 	
-	"github.com/tendermint/starport/pkg/gomodulepath"
-	"github.com/tendermint/starport/templates/app"
+	"github.com/CosmicCompass/starport/pkg/gomodulepath"
+	"github.com/CosmicCompass/starport/templates/app"
 )
 
 var appCmd = &cobra.Command{

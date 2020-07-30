@@ -6,7 +6,7 @@ mod:
 build: mod
 	@go get -u github.com/gobuffalo/packr/v2/packr2
 	@packr2
-	@go build -mod=readonly -o build/starport main.go
+	@go build  -o build/starport main.go
 	@packr2 clean
 	@go mod tidy
 
@@ -15,10 +15,10 @@ ui:
 	-@which npm 1>/dev/null && cd ui && npm install 1>/dev/null && npm run build 1>/dev/null
 
 install: ui build
-	@go install -mod=readonly ./...
+	@go install  ./...
 
 cli: build
-	@go install -mod=readonly ./...
+	@go install  ./...
 
 lint:
 	golangci-lint run --out-format=tab --issues-exit-code=0
